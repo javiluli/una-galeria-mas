@@ -15,7 +15,7 @@
           <div class="container">
             <form class="input-group-lg text-light d-flex w-100 form__search-backdropFiler" id="form_search" >
               <i class="bi bi-search"></i>
-              <input id="input_search" class="form-control px-5 py-3 text-light input__search" name="query" type="text" placeholder="Search" aria-label="Search">
+              <input id="input_search" class="form-control px-5 py-3 text-light input__search" name="query" type="search" placeholder="Search" aria-label="Search">
               <button id="btn_buscar" class="btn btn-primary d-none">Buscar</button>
 
             </form>
