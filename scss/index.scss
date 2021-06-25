@@ -1,0 +1,7 @@
+$primary: hsl(214, 77%, 66%);
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+.btn:hover {
+  color: $gray-100;
+}
