@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/javiluli/una-galeria-mas/compare/v1.1.0...v1.1.1) (2021-07-14)
+
+
+### Bug Fixes
+
+* correccion en la identificacion del `CLIENT_ID` en la API de unsplash ([7ed75fb](https://github.com/javiluli/una-galeria-mas/commit/7ed75fb4adf178f173e2f7b29af7db64e312b0fe))
+
 ## [1.1.0](https://github.com/javiluli/una-galeria-mas/compare/v1.0.1...v1.1.0) (2021-07-14)
 
 
