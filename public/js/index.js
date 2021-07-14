@@ -1,7 +1,11 @@
-const imageDisplayWrapper = document.querySelector('.grid__masonry')
+const grid = document.querySelector('.grid')
 const btnCargarMas = document.getElementById('btn_cargar_mas')
 const btnBuscar = document.getElementById('btn_buscar')
 const inputSearch = document.getElementById('input_search')
+
+// external js: masonry.pkgd.js
+// eslint-disable-next-line no-undef
+let msnry = new Masonry(grid, {})
 
 // Parametros para usar la API de unsplash
 // Access Key para usar la API (privada)
@@ -32,36 +36,57 @@ function getNewImage(page, item) {
 // inserta la imgane como innerHTML en el contenedor con la grid de masonry
 async function setNewImage() {
   page++
+  // create new item elements
+  const elems = []
+  const fragment = document.createDocumentFragment()
+
   for (let i = 0; i < PHOTOS_PER_PAGE; i++) {
     const image = await getNewImage(page, i)
     const img = new Image()
     img.src = await image
-    imageDisplayWrapper.innerHTML += `
-    <img loading="lazy" src="${image}" class="grid__masonry-item" width="400" height=${this.height} /> `
+    const element = getItemElement()
+
+    element.innerHTML += `
+      <div class="grid-item-content">
+        <img loading="lazy" src="${image}" height=${this.height} />
+      </div>
+     `
+
+    fragment.appendChild(element)
+    elems.push(element)
   }
+
+  // append elements to container
+  grid.appendChild(fragment)
+  // add and lay out newly appended elements
+  msnry.appended(elems)
+}
+
+// create <div class="grid-item"></div>
+function getItemElement() {
+  const element = document.createElement('div')
+  element.className = 'grid-item col-12 col-md-6 col-lg-4 px-2'
+  return element
 }
 
 // Cargar masonry layout
 function cargarMasonry() {
-  const elem = document.querySelector('.grid__masonry')
   // eslint-disable-next-line no-undef
-  imagesLoaded(elem, () => {
+  imagesLoaded(grid, () => {
     // eslint-disable-next-line no-undef
-    msnry = new Masonry(elem, {
+    msnry = new Masonry(grid, {
       // options
-      itemSelector: '.grid__masonry-item',
-      gutter: 20,
-      fitWidth: true,
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true,
     })
   })
 }
 
 // Inicia con una priemra llamada de imagenes con un valor por defecto
-async function init() {
+;(async function () {
   await setNewImage((query = 'sea'))
-  cargarMasonry()
-}
-init()
+})()
 
 /**
  * Boton para cargas mas imagenes
@@ -94,10 +119,11 @@ btnBuscar.addEventListener('click', async (e) => {
   page = 0
 
   // borra todos los hijos de un nodo padre
-  const cell = document.querySelector('.grid__masonry')
+  const cell = document.querySelector('.grid')
   if (cell.hasChildNodes()) {
-    while (cell.childNodes.length >= 1) {
-      cell.removeChild(cell.firstChild)
+    // -1 ya que el primer elemento no se debe borrar para el masonry layout
+    while (cell.childNodes.length - 1 > 1) {
+      cell.removeChild(cell.lastChild)
     }
   }
 

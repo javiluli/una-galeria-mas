@@ -1,3 +1,7 @@
+img {
+  width: 100%;
+}
+
 /* wrapper__search */
 .wrapper__search {
   width: 100%;
@@ -10,11 +14,11 @@
 }
 
 /* Massonry layout */
-.grid__masonry {
+.grid {
   margin: 0 auto;
 }
 
-.grid__masonry-item {
+.grid-item {
   margin-bottom: 20px;
 }
 
