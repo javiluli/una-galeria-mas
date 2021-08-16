@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/javiluli/una-galeria-mas/compare/v2.0.0...v2.0.1) (2021-08-16)
+
+
+### Bug Fixes
+
+* se ha eliminado el fichero \`yarn.lock\` ([b6c8a36](https://github.com/javiluli/una-galeria-mas/commit/b6c8a3663f05854c2079be8b775b5aa5c3d4bc09))
+
 ## [2.0.0](https://github.com/javiluli/una-galeria-mas/compare/v1.1.1...v2.0.0) (2021-08-16)
 
 
