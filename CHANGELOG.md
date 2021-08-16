@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/javiluli/una-galeria-mas/compare/v1.1.1...v2.0.0) (2021-08-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* se ha eliminado toda la parte de PHP y PHP-MVC
+
+### Features
+
+* toda la aplicacion se ha migrado a create-react-app ([2a1478b](https://github.com/javiluli/una-galeria-mas/commit/2a1478b4b6be68a440fbaf5bd07308f1632b9b65))
+
 ### [1.1.1](https://github.com/javiluli/una-galeria-mas/compare/v1.1.0...v1.1.1) (2021-07-14)
 
 
